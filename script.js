@@ -2,7 +2,8 @@
 // Variable to Store the Element => Done
 // Function to get the data from weather app
 // Manipluate the varibe of already created element
-
+require('dotenv').config();
+const APIKEY = process.env.API_KEY;
 let data;
 
 const inputBox = document.getElementById("inputBox");
@@ -15,10 +16,10 @@ const temprature = document.getElementById("temprature");
 const logoImage = document.getElementById("logoImage");
 const weatherStatus = document.getElementById("weatherStatus");
 const grid = document.querySelector("#forecast")
-
-
+const form = document.querySelector('form');
 const getData = async (event) => {
   event.preventDefault();
+  form.querySelector("button").disabled=true
   if (!inputBox.value) {
     alert("Please Enter The City Name: ");
     return;
@@ -30,13 +31,11 @@ const getData = async (event) => {
   // Fetch Details
 
   const fetchData = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=2da322d557ff475780a54750231202&q=${city}&days=14`
+    `http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${city}&days=14`
   );
 
   const orgData = await fetchData.json();
   data = orgData;
-
-//http://api.weatherapi.com/v1/forecast.json?key=2da322d557ff475780a54750231202&q=hyderabad&days=7
   // Displaying the data in HTML
   countryName.innerHTML = data.location.country;
   stateName.innerHTML = data.location.region;
@@ -49,7 +48,7 @@ const getData = async (event) => {
 
 
 
-  
+  grid.innerHTML=""
   data.forecast.forecastday.forEach((a)=>{
     
   const div =document.createElement("div");
@@ -70,7 +69,10 @@ const getData = async (event) => {
            grid.appendChild(div)
   })
  
+  form.querySelector("button").disabled=false
 
-  //
    
 };
+form.addEventListener('submit', getData);
+
+

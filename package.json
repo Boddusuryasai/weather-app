@@ -1,0 +1,31 @@
+{
+  "name": "11-feb-2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boddusuryasai/11-Feb-2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boddusuryasai/11-Feb-2023/issues"
+  },
+  "homepage": "https://github.com/Boddusuryasai/11-Feb-2023#readme",
+  "devDependencies": {
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.8.3",
+    "path-browserify": "^1.0.1",
+    "postcss": "^8.4.21",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}

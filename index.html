@@ -5,22 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
 
 
     <!-- adding the css file -->
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- container for holding the weather card -->
-    <div class="container bg-pink-200 flex flex-row justify-center h-screen gap-8">
+    <div class="container bg-[#f472b6] flex flex-row justify-center h-screen font-[Poppins] gap-8 border-0 text-white flex-wrap">
       <div>
       <h1 class="text-xl font-bold text-center">Weather Web App</h1>
 
       <!-- section for searching the weather of a city -->
-      <form onsubmit="getData(event)" class="searchData">
-        <input  id="inputBox" type="text" placeholder="Enter the city name" />
-        <button class="font-semibold">Search</button>
+      <form  class="flex flex-row gap-3 my-3">
+        <input   class="w-full shadow-[0px_2px_8px_#ffff] placeholder:text-black placeholder:pl-3 bg-opacity-50  outline-none  focus:outline-none focus:bg-white   text-base  text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" id="inputBox" type="text" placeholder="Enter the city name" />
+        <button  class="flex mx-auto text-white shadow-[0px_2px_8px_#ffff]  border  py-2 px-4 focus:outline-none hover:bg-sky-900  text-md ">Search</button>
       </form>
 
       <!-- section for displaying the city weather data -->
@@ -45,7 +47,7 @@
             <p id="cityName">__</p>
           </div>
         </div>
-
+    
         <!-- displaying the weather status -->
         <div class="weatherDetails details">
           <!-- displaying the humidity -->
@@ -69,13 +71,13 @@
 
           <!-- displaying the weather condition -->
           <div class="card">
-            <img width="20px" id="logoImage" src="" alt="icon" />
+            <img width="20px" id="logoImage" src="#" alt="icon" />
             <p id="weatherStatus">__</p>
           </div>
         </div>
       </section>
     </div>
-      <div id="forecast" class="grid grid-cols-6 justify-center gap-4">
+      <div id="forecast" class="w-1/2 flex flex-row flex-wrap justify-center gap-4">
           
           
           
@@ -85,5 +87,5 @@
   </body>
 
   <!-- adding the javascript file -->
-  <script src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </html>
